@@ -6,7 +6,7 @@ enum class Color {
 }
 
 fun updateWeather(
-        celsiusDegrees: Double
+        celsiusDegrees: Int
 ) {
     val description: String
     val color: Color
