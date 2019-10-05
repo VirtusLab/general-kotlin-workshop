@@ -1,12 +1,9 @@
 package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
     val job = launch {
         var nextPrintTime = System.currentTimeMillis()
         var i = 0

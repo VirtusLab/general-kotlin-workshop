@@ -3,7 +3,7 @@ package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 import kotlinx.coroutines.*
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
 
     val jobs = arrayListOf<Job>()
 

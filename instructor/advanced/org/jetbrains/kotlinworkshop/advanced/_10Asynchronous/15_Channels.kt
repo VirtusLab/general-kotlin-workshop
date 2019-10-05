@@ -1,11 +1,12 @@
 package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
     val channel = Channel<Int>()
 
     launch {
