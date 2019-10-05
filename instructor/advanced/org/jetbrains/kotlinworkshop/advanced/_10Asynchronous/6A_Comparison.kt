@@ -1,9 +1,6 @@
 package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import kotlin.concurrent.thread
 
 
@@ -19,7 +16,7 @@ fun threads() {
 }
 
 
-fun coroutines() = runBlocking {
+suspend fun coroutines() = coroutineScope {
     val jobs = List(100000) {
         GlobalScope.launch() {
             delay(1000L)
@@ -31,7 +28,7 @@ fun coroutines() = runBlocking {
 
 
 
-fun main() {
+suspend fun main() {
 
     coroutines()
     // threads()

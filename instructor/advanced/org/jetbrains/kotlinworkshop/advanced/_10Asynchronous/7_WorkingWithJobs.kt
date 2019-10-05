@@ -1,11 +1,12 @@
 package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
     val job = launch {
         longRunning()
     }

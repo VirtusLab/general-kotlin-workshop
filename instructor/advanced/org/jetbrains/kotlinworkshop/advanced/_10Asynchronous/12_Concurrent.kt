@@ -2,11 +2,12 @@ package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
 
     val time = measureTimeMillis {
         val one = async(Dispatchers.Default) { function1() }

@@ -3,10 +3,11 @@ package org.jetbrains.kotlinworkshop.advanced._10Asynchronous
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.channels.produce
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.runBlocking
 
 
-fun main() = runBlocking {
+suspend fun main() = coroutineScope {
     val squares = produceSquares()
     squares.consumeEach {
         println(it)
